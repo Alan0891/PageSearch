@@ -1,0 +1,194 @@
+root:{
+    --bg-color:rgb(221, 221, 221);
+    --txt-color:rgb(255, 255, 255);
+}
+
+body{
+   margin: 0px;
+   padding: 0px;
+}
+
+@media(max-width:470px){
+  #txt_pesq{
+      font-size:18pt;
+  }
+  #glass{
+      font-size: 16pt;
+  }
+}
+
+#top{
+    width:50px;
+    height:50px;
+    position:fixed;
+    right:0;
+    bottom:0;
+    margin:30px;
+    border-radius:50%;
+    border:1px solid #ddd;
+    text-align:center;
+    line-height:50px;
+    display:none;
+    z-index:999;
+    cursor:pointer;
+    background-color: rgba(270, 130, 30, 0.9);;
+    color: #fff;
+}
+aside{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+}
+#menu_btn{
+    width: 40px;
+    height: 40px;
+    margin-right:20px;
+    margin-top: 10px;
+    cursor: pointer;
+    color:rgba(270, 130, 30, 0.9);
+}
+
+#menu{
+    width: 0px;
+    min-height: 100vh;
+    background-color:#ddd;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all ease .5s;
+}
+#menu ul{
+    list-style: none;
+    margin-top: 50px;
+    padding: 0;
+}
+#menu li{
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    margin: 0px;
+    padding: 5px;
+}
+#menu li:hover{
+   opacity: 0.7;
+   padding: 20px;
+   background-color:rgba(270, 130, 30, 0.9);
+}
+#menu li:hover a{
+    font-size: 11pt;
+    color: cadetblue;
+    font-weight: bold;
+}
+#menu li a{
+   text-decoration: none;
+   color:rgba(270, 130, 30, 0.9);
+   margin: 0;
+   padding: 0;
+   font-size: 10pt;
+}  
+#menu a i{
+    text-align: center;
+}
+.menu_open{
+  width:200px !important;
+}
+.proj{
+    text-align: center;
+    transition: all ease 0.7s;
+}
+/*#sub_txt{
+    margin: 0;
+    padding-bottom: 10px;
+}
+#sub_txt::after{
+    content: '|';
+    margin-left: 1px;
+    opacity: 1;
+    animation: pisca .7s infinite;
+}
+@keyframes pisca{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:0;
+    }
+}*/
+#clock{
+    position: fixed;
+    min-width: 100%;
+    margin:0;
+    padding:0;
+    z-index: 99;
+}
+#clock p{
+    color: #000;
+    font-size: 10pt;
+}
+#clock img{
+    margin: 0;
+    padding: 0;
+}
+#txt_pesq{
+    font-family: 'Fredoka One', cursive;
+    color:rgba(270, 130, 30, 0.9);
+    text-shadow: #ccc;
+}
+#glass{
+    font-size: 33pt;
+    color: cadetblue;
+}
+#suggest{
+    font-weight: bold;
+    font-style: italic;
+}
+
+#d_menu{
+    position: fixed;
+    top: 0;
+    height: 150vh;
+    width: 180px;
+    display: flex;
+    left: 0;
+    z-index:-999;
+}
+
+#dash_menu{
+    width: 180px;
+    height: 150vh;
+    background-color:darkgrey;
+    overflow: hidden;
+    overflow: auto;
+}
+#dash_menu_btn{
+   margin-left: 20px;
+   margin-top: 20px; 
+   width: 0px;
+   height: 150vh;
+}
+#prod{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position:fixed;
+    background-color: #fff;
+    height: 0;
+    width: 0;
+    z-index:999;
+    border-top: 4px solid cadetblue;
+    border-bottom: 4px solid rgba(270, 130, 30, 0.9);;
+}
+#pop{
+    height: 40vh;
+    width: 60vh;
+}
+#prod span{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    display: flex;
+    justify-content: end;
+    color: red;
+}
+

@@ -1,0 +1,22 @@
+{
+    "name": "acesar/bw7",
+    "description": "course_bw7",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        },
+        "files":[
+            "config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Alan Cesar",
+            "email": "artgio32@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
