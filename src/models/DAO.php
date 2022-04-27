@@ -12,7 +12,6 @@ class DAO{
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function sqlBind($stmt, $key, $value){
-        //var_dump($stmt,$key,$value);exit;
         return $stmt->bindValue($key, $value);
     }
     public function sqlParams($stmt,$params = []){
@@ -21,7 +20,6 @@ class DAO{
         }
     }
     public function sql($query, $params = []){
-        //var_dump($query,$params);exit;
         $stmt = Connect::Connection()->prepare($query);
              $this->sqlParams($stmt, $params);
                 $stmt->execute();

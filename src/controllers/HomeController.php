@@ -4,7 +4,6 @@ namespace src\controllers;
 use src\models\Journalist;
 use src\models\Blogger;
 use src\models\render;
-use src\models\profile;
 
 class HomeController extends render{
 
@@ -24,8 +23,5 @@ class HomeController extends render{
     }
     public function delet($table,$params){
         (new Blogger())->deleteNotice($table,[':id'=>$params]);
-    }
-    public function validar(){
-        (new profile())->validar(['A'=>'Alan','B'=> 'Arthur','C'=>'','D'=> 'Giovanna','E'=> 'Jacqueline']);
     }
 }

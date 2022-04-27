@@ -6,7 +6,7 @@ use src\models\Blogger;
 use src\models\Journalist;
 use src\models\render;
 
-class ProductController extends render{
+class JournController extends render{
   
     public function index(){
         $data = [];
@@ -16,6 +16,8 @@ class ProductController extends render{
 
     public function insertJourn(){
         $input = filter_input_array(INPUT_POST,FILTER_DEFAULT);
+        if(isset($input)){
         (new Journalist($input['matriculaJorn'],$input['nomeJorn']))->insertJournalist();
+        }
     }
 }

@@ -20,8 +20,8 @@
     <div id="menu" class="menu_open">
         <ul>
             <li><a href="home"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="product" id=""><i class="fa-solid fa-pen"></i> Edit</a></li>
-            <li><a href="profile" id="profile"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="journ" id=""><i class="fa-solid fa-pen"></i> Edit</a></li>
+            <li><a href="#" id="profile"><i class="fa-brands fa-github"></i> GitHub</a></li>
         </ul>
     </div>
     </aside>
