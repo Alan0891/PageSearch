@@ -6,7 +6,11 @@ class core{
     public $controller;
     public $method;
     public $params = [];
-
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function Run(){
         $uri = explode('index.php', $_SERVER['PHP_SELF']);
         $uri = end($uri);

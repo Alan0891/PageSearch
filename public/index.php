@@ -8,6 +8,3 @@ try{
 }catch(ErrorException $error){
     echo $e->getMessage();
 }
-
-
-
