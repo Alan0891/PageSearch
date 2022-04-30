@@ -18,7 +18,7 @@
 
           <div class="col-sm-12 col-md-10 col-lg-8">
            
-          <form action="home/publick" method="POST" name="edit">
+          <form action="home/add" method="POST" name="edit">
 
             <div class="form-group">
             <select class="form-control form-control-sm" name="escritor" id="escritor">
@@ -58,7 +58,7 @@
 
             <div class="col-sm-12 col-md-10 col-lg-8">
 
-            <form action="product/insertJourn" method="POST" name="register">
+            <form action="journ/addJourn" method="POST" name="register">
               
             <div class="form-group">
               <input type="text" name="nomeJorn" id="nomeJorn" class="form-control form-control-sm" placeholder="Escritor">

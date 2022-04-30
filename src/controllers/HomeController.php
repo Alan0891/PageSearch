@@ -11,17 +11,20 @@ class HomeController extends render{
        $data = [];
        $this->templateViewRender('templates/home', $data); 
     }
-    public function publick(){
+    public function add(){
         $input = filter_input_array(INPUT_POST,FILTER_DEFAULT);
-        (new Blogger())->reading(new Journalist($input['nome'],$input['escritor']),['title' => $input['titulo'] ,'body' => $input['artigo']]);   
+        (new Blogger())->addNotice(new Journalist($input['nome'],$input['escritor']),['title' => $input['titulo'] ,'body' => $input['artigo']]);   
     }
     public function list($table,$params = null){
-        (new Blogger())->publick($table,[':id'=>$params]);
+        (new Blogger())->selectNotice($table,[':id'=>$params]);
     }
     public function listPesq($table,$field){
-        (new Blogger())->publickPesq($table,$field);
+        (new Blogger())->selectNoticePesq($table,$field);
     }
-    public function delet($table,$params){
+    public function update($table,$params){
+        (new Blogger())->updateNotice($table,[':id'=>$params]);
+    }
+    public function delete($table,$params){
         (new Blogger())->deleteNotice($table,[':id'=>$params]);
     }
 }

@@ -7,6 +7,7 @@ class DAO{
 
     public function sqlSelect($query, $params = []){
         return $this->sql($query,$params)->fetchAll(PDO::FETCH_ASSOC);
+        exit;
     }
     public function sqlBind($stmt, $key, $value){
         return $stmt->bindValue($key, $value);

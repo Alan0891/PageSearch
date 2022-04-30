@@ -25,8 +25,16 @@ class Repository implements interfaceRepository
         return (new DAO())->sqlSelect("SELECT * FROM " . $table . " WHERE title LIKE '" . trim($title) . "%' OR title LIKE '%" . trim($title) . "%'");
     }
     public function update($table,$params = [])
-    {
-        return (new DAO())->sql('UPDATE'.$table.' SET' .str_replace(':', '', implode('', array_keys($params))) . " = " . implode(',', array_keys($params)). ' WHERE ' . str_replace(':', '', implode('', array_keys($params))) . " = " . implode(',', array_keys($params)) . ' ',$params);
+    {   
+        $response = $this->select($table,$params);
+        if(count($response)>0){
+          array_shift($response[0]); 
+          foreach($response as $resp){ 
+            foreach($resp as $key => $value){
+               return (new DAO())->sql("UPDATE ".$table." SET " . $key . " = " .$value. " WHERE id = :id " ,$params);
+            }
+          }
+        }
     }
     public function delete($table, $params = [])
     {
