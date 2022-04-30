@@ -45,7 +45,6 @@ class DAO{
      * @return void
      */
     public function sql($query, $params = []){
-        var_dump($query,$params);
         $stmt = Connect::Connection()->prepare($query);
              $this->sqlParams($stmt, $params);
                 $stmt->execute();
