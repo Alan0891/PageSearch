@@ -3,7 +3,7 @@
 namespace src\controllers;
 use src\models\Journalist;
 use src\models\Blogger;
-use src\models\render;
+use src\core\render;
 
 class HomeController extends render{
 

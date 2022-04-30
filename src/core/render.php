@@ -1,6 +1,6 @@
 <?php
 
-namespace src\models;
+namespace src\core;
 
 class render{
 

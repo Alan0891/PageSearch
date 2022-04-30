@@ -66,7 +66,7 @@ class Journalist{
         return $this->id;
     }
 
-    public function insertJournalist(){
+    public function addJournalist(){
          $response = (new Repository())->select('tb_jornalista',[':matricula' => $this->getMatricula()]);
          if(count($response) > 0){
              foreach($response as $journ){
@@ -74,7 +74,7 @@ class Journalist{
              }
               return $this->getId();
          }else{
-              (new Repository())->insert('tb_jornalista', [':nome'=>$this->getMatricula() , ':matricula' => $this->getName()]);
+              (new Repository())->add('tb_jornalista', [':nome'=>$this->getMatricula() , ':matricula' => $this->getName()]);
                 return $this->getId();
             }  
     }

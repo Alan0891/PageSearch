@@ -10,9 +10,9 @@
 
 <div class="container-fluid mt-3">
 
-    <h6><i class="fa-solid fa-pen"></i> Adicionar artigo</h6><hr>
-
       <div class="container">
+
+      <h6 class=""><i class="fa-solid fa-pen"></i> Adicionar artigo</h6><hr>
 
           <div class="row d-flex justify-content-center">
 

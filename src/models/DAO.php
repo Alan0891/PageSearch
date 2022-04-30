@@ -6,10 +6,7 @@ use \PDO;
 class DAO{
 
     public function sqlSelect($query, $params = []){
-      $stmt = Connect::Connection()->prepare($query);
-       $this->sqlParams($stmt, $params);
-         $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $this->sql($query,$params)->fetchAll(PDO::FETCH_ASSOC);
     }
     public function sqlBind($stmt, $key, $value){
         return $stmt->bindValue($key, $value);
@@ -23,5 +20,6 @@ class DAO{
         $stmt = Connect::Connection()->prepare($query);
              $this->sqlParams($stmt, $params);
                 $stmt->execute();
+                 return $stmt;
     }
 }

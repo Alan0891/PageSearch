@@ -7,7 +7,7 @@ use src\models\Journalist;
 class Blogger{
 
     public function reading(Journalist $journ, $notice = []){
-          (new Repository())->insert('tb_notice',[':id_journ' => $journ->insertJournalist(),':title' => $notice['title'],':body' => $notice['body']]);
+          (new Repository())->add('tb_notice',[':id_journ' => $journ->addJournalist(),':title' => $notice['title'],':body' => $notice['body']]);
     }
     public function publick($table,$params = null){
           return (new Repository())->select($table,$params);

@@ -47,7 +47,7 @@ document.querySelector('#pop_closed').addEventListener('click',()=>{
 function JsonReturn(json){ 
 let html = '' 
 for(i in json){
-   html += `<div class="d-flex inline"><h5><a href=> ${json[i].title}</a></h5> <p class="pl-2">${json[i].dateday}</p></div>`
+   html += `<div class="d-flex inline"><h5><a href=> ${json[i].title}</a></h5> <p class="pl-2" style="font-size:8pt;">${json[i].dateday}</p></div>`
    html += `<hr>`
    html += `<p>${json[i].body} </p>`
    html += `<span${json[i].nome}></span>`
