@@ -23,7 +23,7 @@ class Blogger{
      * @return void
      */
     public function selectNotice($table,$params = null){
-          return (new Repository())->select($table,$params);
+          return (new Repository())->find($table,$params);
     }
     /**
      * Undocumented function
@@ -33,7 +33,7 @@ class Blogger{
      * @return void
      */
     public function selectNoticePesq($table,$title){
-          echo json_encode((new Repository())->selectOne($table,$title));
+          echo json_encode((new Repository())->findById($table,$title));
     }
     /**
      * Undocumented function

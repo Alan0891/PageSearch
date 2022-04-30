@@ -81,7 +81,7 @@ class Journalist
      */
     public function addJournalist()
     {
-        $response = (new Repository())->select('tb_jornalista', [':matricula' => $this->getMatricula()]);
+        $response = (new Repository())->find('tb_jornalista', [':matricula' => $this->getMatricula()]);
         if (count($response) > 0) {
             foreach ($response as $journ) {
                 $this->setId($journ['id']);

@@ -25,7 +25,7 @@ class Repository implements interfaceRepository
      * @param [type] $params
      * @return void
      */
-    public function select($table, $params = null)
+    public function find($table, $params = null)
     {
         if ($params != null) {
             return (new DAO())->sqlSelect("SELECT * FROM " . $table . " WHERE " . str_replace(':', '', implode('', array_keys($params))) . " = " . implode(',', array_keys($params)) . " ", $params);
@@ -40,7 +40,7 @@ class Repository implements interfaceRepository
      * @param [type] $title
      * @return void
      */
-    public function selectOne($table, $title)
+    public function findById($table, $title)
     {
         return (new DAO())->sqlSelect("SELECT * FROM " . $table . " WHERE title LIKE '" . trim($title) . "%' OR title LIKE '%" . trim($title) . "%'");
     }
@@ -53,7 +53,7 @@ class Repository implements interfaceRepository
      */
     public function update($table,$params = [])
     {   
-        $response = $this->select($table,$params);
+        $response = $this->find($table,$params);
         if(count($response)>0){
           array_shift($response[0]); 
           foreach($response as $resp){ 
