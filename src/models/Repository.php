@@ -78,6 +78,6 @@ class Repository implements interfaceRepository
      */
     public function delete($table, $params = [])
     {
-        return (new DAO())->sql("DELETE FROM " . $table . " WHERE " . str_replace(':', '', implode('', array_keys($params))) . " = " . implode(',', array_keys($params)) . " ", $params);
+        return $this->db->sql("DELETE FROM " . $table . " WHERE " . str_replace(':', '', implode('', array_keys($params))) . " = " . implode(',', array_keys($params)) . " ", $params);
     }
 }
