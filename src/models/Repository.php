@@ -7,6 +7,12 @@ use src\models\DAO;
 
 class Repository implements interfaceRepository
 {
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new DAO();
+    }
     /**
      * Undocumented function
      *
@@ -16,7 +22,7 @@ class Repository implements interfaceRepository
      */
     public function add($table, $params = [])
     {
-        return (new DAO())->sql("INSERT INTO " . $table . "(" . str_replace(':', '', implode(',', array_keys($params))) . ") VALUES (" . implode(',', array_keys($params)) . ")", $params);
+        return $this->db->sql("INSERT INTO " . $table . "(" . str_replace(':', '', implode(',', array_keys($params))) . ") VALUES (" . implode(',', array_keys($params)) . ")", $params);
     }
     /**
      * Undocumented function
@@ -25,12 +31,12 @@ class Repository implements interfaceRepository
      * @param [type] $params
      * @return void
      */
-    public function find($table, $params = null)
+    public function find($table, $params = [])
     {
         if ($params != null) {
-            return (new DAO())->sqlSelect("SELECT * FROM " . $table . " WHERE " . str_replace(':', '', implode('', array_keys($params))) . " = " . implode(',', array_keys($params)) . " ", $params);
+            return $this->db->sqlSelect("SELECT * FROM " . $table . " WHERE " . str_replace(':', '', implode('', array_keys($params))) . " = " . implode(',', array_keys($params)) . " ", $params);
         } else {
-            return (new DAO())->sqlSelect("SELECT * FROM " . $table, []);
+            return $this->db->sqlSelect("SELECT * FROM " . $table, []);
         }
     }
     /**
@@ -42,7 +48,7 @@ class Repository implements interfaceRepository
      */
     public function findById($table, $title)
     {
-        return (new DAO())->sqlSelect("SELECT * FROM " . $table . " WHERE title LIKE '" . trim($title) . "%' OR title LIKE '%" . trim($title) . "%'");
+        return $this->db->sqlSelect("SELECT * FROM " . $table . " WHERE title LIKE '" . trim($title) . "%' OR title LIKE '%" . trim($title) . "%'");
     }
     /**
      * Undocumented function
@@ -51,14 +57,14 @@ class Repository implements interfaceRepository
      * @param array $params
      * @return void
      */
-    public function update($table,$params = [])
+    public function put($table,$params = [])
     {   
         $response = $this->find($table,$params);
         if(count($response)>0){
           array_shift($response[0]); 
           foreach($response as $resp){ 
             foreach($resp as $key => $value){
-               return (new DAO())->sql("UPDATE ".$table." SET " . $key . " = " .$value. " WHERE id = :id " ,$params);
+               return $this->db->sql("UPDATE ".$table." SET " . $key . " = " .$value. " WHERE id = :id " ,$params);
             }
           }
         }

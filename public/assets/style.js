@@ -1,6 +1,4 @@
-
-
-
+/*
 document.querySelector('#profile').addEventListener('click', typeWriter(15))
 
 function typeWriter(elemento) {
@@ -34,15 +32,9 @@ function Writer(e){
 
 //Writer(document.getElementById('sub_txt').innerHTML)
 
-setTimeout(()=>{
-  document.getElementById('prod').style.height = '40vh'
-  document.getElementById('prod').style.width = '60vh'
-},5000)
 
-document.querySelector('#pop_closed').addEventListener('click',()=>{
-  document.getElementById('prod').style.height = '0'
-  document.getElementById('prod').style.width = '0'
-})
+*/
+
 
 function JsonReturn(json){ 
 let html = '' 
@@ -55,10 +47,15 @@ for(i in json){
  document.getElementById('html').innerHTML = html
 }
 
-document.getElementById('form_pesq').addEventListener('keyup',()=>{
+
+let formpesq = document.getElementById('form_pesq');
+
+
+if(formpesq != null){
+formpesq.addEventListener('keyup',()=>{
 let p = document.getElementById('form_pesq').value
 if(p.length > 0){  
-fetch('http://localhost:3000/public/home/listpesq/tb_notice/'+p,{
+fetch('http://localhost:3000/home/listpesq/tb_notice/'+p,{
   method: 'GET',
   headers:{
     'Content-Type':'application/json'
@@ -72,6 +69,7 @@ fetch('http://localhost:3000/public/home/listpesq/tb_notice/'+p,{
   document.getElementById('html').innerHTML= " "
  }
 })
+}
 
 let clock = document.querySelector('#clock p')
 setInterval(showTime,1000)
@@ -112,9 +110,8 @@ window.addEventListener('scroll',()=>{
 
 let psq = document.getElementById('form_pesq')
 
-
+if(psq != null){
 psq.addEventListener('keyup',()=> {
-
   document.getElementById('pesq').innerHTML = psq.value
 
   if(psq.value.length > 0){
@@ -125,6 +122,7 @@ psq.addEventListener('keyup',()=> {
     document.querySelector('#txt_pesq').classList.remove('text-center')
     document.querySelector('#txt_pesq').classList.remove('h1')
     document.querySelector('#txt_pesq').classList.add('h4')
+    document.querySelector('#sub_txt').classList.remove('text-center')
     document.getElementById('glass').style.fontSize = '20pt'
     document.querySelector('#barra').classList.remove('form-group')
     document.querySelector('#barra').classList.add('form-inline')
@@ -137,14 +135,26 @@ psq.addEventListener('keyup',()=> {
     document.querySelector('#txt_pesq').classList.add('text-center')
     document.querySelector('#txt_pesq').classList.remove('h4')
     document.querySelector('#txt_pesq').classList.add('h1')
+    document.querySelector('#sub_txt').classList.add('text-center')
     document.getElementById('glass').style.fontSize = '30pt'
     document.querySelector('#barra').classList.add('form-group')
     document.querySelector('#barra').classList.remove('form-inline')
     document.getElementById('suggest').innerHTML = " "
-   
   }
+ })
+}
+
+setTimeout(()=>{
+  document.getElementById('prod').style.height = '40vh'
+  document.getElementById('prod').style.width = '60vh'
+},5000)
+
+document.querySelector('#pop_closed').addEventListener('click',()=>{
+  document.getElementById('prod').style.height = '0'
+  document.getElementById('prod').style.width = '0'
 })
 
+/*
 console.log(Math.floor(3.23), Math.ceil(3.21), Math.round(3.37))
 
 console.log(Math.floor(Math.random() * 100))
@@ -274,7 +284,7 @@ async function upImg(){
   return req
  }
 
- 
+ */
 
 
  

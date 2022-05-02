@@ -12,7 +12,7 @@ class render{
      */
     public function templateView($view, $data =[]){
         extract($data);
-          include "../public/views/".$view.".php";
+          include "./public/views/".$view.".php";
     }
     /**
      * Undocumented function
@@ -23,7 +23,7 @@ class render{
      */
     public function templateViewRender($view, $data = []){
         extract($data);
-          include "../public/views/tmp.php";
+          include "./public/views/tmp.php";
     }
     /**
      * Undocumented function
@@ -34,6 +34,6 @@ class render{
      */
     public function rendering($view, $data = []){
         extract($data);
-          include "../public/views/".$view.".php";
+          include "./public/views/".$view.".php";
     }
 }

@@ -1,5 +1,5 @@
 <?php
-require "../vendor/autoload.php";
+require "./vendor/autoload.php";
 //error_reporting("~E-notice");
 use src\core\core;
 

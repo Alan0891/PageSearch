@@ -22,7 +22,7 @@ class Blogger{
      * @param [type] $params
      * @return void
      */
-    public function selectNotice($table,$params = null){
+    public function selectNotice($table,$params = []){
           return (new Repository())->find($table,$params);
     }
     /**

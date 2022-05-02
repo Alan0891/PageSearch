@@ -26,7 +26,7 @@
                
             <form class="mt-05">
             <div class="text-center pb-2 h1" id="txt_pesq">ARTSE<i class="fa-solid fa-magnifying-glass" id="glass"></i>RCH</div>
-            <!--<p class="text-center" id="sub_txt">Seu site de pesquisas confiáveis</p>-->
+            <p class="text-center" id="sub_txt"><span id="txt_1">Seu site de </span><span id="txt_2">pesquisas</span> <span id="txt_3">confiáveis</span></p>
             <div class="form-group" id="barra">
           
               <input type="text" class="form-control form-control-md col-12" id="form_pesq" placeholder="">

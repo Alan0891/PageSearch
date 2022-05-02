@@ -12,11 +12,11 @@
 
       <div class="container">
 
-      <h6 class=""><i class="fa-solid fa-pen"></i> Adicionar artigo</h6><hr>
-
           <div class="row d-flex justify-content-center">
 
           <div class="col-sm-12 col-md-10 col-lg-8">
+
+          <h6 class="d-flex justify-content-end"> <i class="fa-solid fa-pen pr-1"></i> Adicionar artigo</h6><hr class="bg-warning">
            
           <form action="home/add" method="POST" name="edit">
 
@@ -45,18 +45,23 @@
             </div>
 
             <div class="form-group d-flex justify-content-end">
-              <button class="btn btn-sm btn-outline-success"><i class="fa-solid fa-plus"></i> Escrever artigo</button>
+              <button class="btn btn-sm btn-outline-success"> <i class="fa-solid fa-plus p-"></i> Escrever artigo</button>
             </div>
 
           </form>
           </div>
           </div>
 
-          <hr>
+      </div>
+
+      <div class="container mt-3">
 
           <div class="row d-flex justify-content-center">
+            
 
             <div class="col-sm-12 col-md-10 col-lg-8">
+
+            <h6 class="d-flex justify-content-end"> <i class="fa-solid fa-user pr-2"></i>  Adicionar jornalista</h6><hr class="bg-warning">
 
             <form action="journ/addJourn" method="POST" name="register">
               

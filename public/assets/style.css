@@ -15,6 +15,9 @@ body{
   #glass{
       font-size: 16pt;
   }
+  #sub_text{
+    font-size: 14pt;
+  }
 }
 
 #top{
@@ -134,6 +137,21 @@ aside{
     font-family: 'Fredoka One', cursive;
     color:rgba(270, 130, 30, 0.9);
     text-shadow: #ccc;
+    margin: 0;
+    padding:0;
+    padding-bottom:15px;
+}
+#sub_text{
+    margin: 0;
+    padding:0;
+    padding-bottom:15px;
+}
+#txt_1,#txt_3{
+    color: cadetblue;
+}
+#txt_2{
+    color:rgba(270, 130, 30, 0.9);
+    font-weight: bold;
 }
 #glass{
     font-size: 33pt;
